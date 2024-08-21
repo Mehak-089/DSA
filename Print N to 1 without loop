@@ -1,0 +1,54 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+class Solution {
+  public:
+  
+    void printNos(int N) {
+       if (N < 1) {
+            return;
+        }
+        else{
+        // Print the current number
+        cout << N <<" ";
+        }
+        // Recursively call the function with N-1
+        printNos(N - 1);
+    }
+    
+};
+
+//{ Driver Code Starts.
+/* Driver program to test printNos */
+int main() {
+    int T;
+
+    // taking testcases
+    cin >> T;
+
+    while (T--) {
+        int N;
+
+        // input N
+        cin >> N;
+        Solution ob;
+        // calling printNos() function
+        ob.printNos(N);
+        cout << "\n";
+    }
+    return 0;
+}
+
+// } Driver Code Ends
+
+
+
+For Input: 
+10
+Your Output: 
+10 9 8 7 6 5 4 3 2 1
+Expected Output: 
+10 9 8 7 6 5 4 3 2 1
