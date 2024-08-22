@@ -1,0 +1,61 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+// User function Template for C++
+class Solution {
+  public:
+    vector<long long> factorialNumbersHelper(int i, long long n) {
+        // Calculate factorial of i
+        long long factorial = 1;
+        for (int j = 1; j <= i; j++) {
+            factorial *= j;
+        }
+
+        // If the factorial is greater than n, stop the recursion
+        if (factorial > n) {
+            return {};
+        }
+
+        // Recursively calculate the next factorial numbers
+        vector<long long> result = factorialNumbersHelper(i + 1, n);
+
+        // Add the current factorial to the result
+        result.insert(result.begin(), factorial);
+
+        return result;
+    }
+
+    vector<long long> factorialNumbers(long long n) {
+        // Start with 1
+        return factorialNumbersHelper(1, n);
+    }
+};
+
+//{ Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        long long N;
+        cin >> N;
+        Solution ob;
+        vector<long long> ans = ob.factorialNumbers(N);
+        for (auto num : ans) {
+            cout << num << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+// } Driver Code Ends
+
+
+For Input: 
+3
+Your Output: 
+1 2
+Expected Output: 
+1 2
