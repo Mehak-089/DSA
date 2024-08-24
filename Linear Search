@@ -1,0 +1,49 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+int main() {
+    
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i = 0 ; i<n; i++){
+        cin>>arr[i];
+    }
+    for(int i=0;i<n;i++){
+     cout<<arr[i]<<endl;   
+    }
+    cout<<"Enter the element you want to search"<<endl;
+    int k;
+    cin>>k;
+// Searching the element in the array
+    bool found = false;
+    for(int i = 0; i < n; i++){
+        if(k == arr[i]){
+            cout << "Element found at index: " << i << endl;
+            found = true;
+            break;  // Element found, exit the loop
+        }
+    }
+    
+    // If element is not found, print "not present"
+    if(!found){
+        cout << "Element not present" << endl;
+    }
+    
+    return 0;
+}  /tmp/cC6p0VCcc9.o
+4
+41
+52
+74
+96
+41
+52
+74
+96
+Enter the element you want to search
+74
+Element found at index: 2
+
+
+=== Code Execution Successful ===
