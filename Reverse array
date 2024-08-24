@@ -1,0 +1,33 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+void reversearray(int arr[], int n){
+         int start=0;
+        int end=n-1;
+        while(start<=end){
+            swap(arr[start],arr[end]);
+            start++;
+            end--;
+        }
+    }
+int main() {
+        int n;
+        cin>>n;
+        int arr[n];
+        for(int i=0;i<n;i++){
+            cin>>arr[i];
+        }
+        reversearray(arr , n );
+        for(int i=0;i<n;i++){
+            cout << arr[i]<<" ";
+        } 
+return 0;
+}  /tmp/dJNvuq7dk7.o
+4
+74
+8
+6
+10
+10 6 8 74 
+
+=== Code Execution Successful ===
