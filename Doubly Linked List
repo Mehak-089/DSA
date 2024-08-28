@@ -1,0 +1,61 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+class Node{
+    public:
+    int data;
+    Node* next;
+    Node* back;
+Node(int data1,Node* next1,Node* back1){
+    data=data1;
+    next=next1;
+    back=back1;
+}
+ Node(int data1) {
+        data = data1;
+        next = nullptr;
+        back = nullptr;
+    }
+};
+void print(Node* head) {
+    while (head != nullptr) {
+        // Print the data in the tail node
+        cout << head->data << " ";  
+         // Move to the next node
+        head = head->next;         
+    }
+}
+Node* insertAtTail(Node* head, int k) {
+    // Create a new node with data 'k'
+    Node* newNode = new Node(k);
+
+    // If the doubly linked list is empty, set 'head' to the new node
+    if (head == nullptr) {
+        return newNode;
+    }
+
+    // Traverse to the end of the doubly linked list
+    Node* tail = head;
+    while (tail->next != nullptr) {
+        tail = tail->next;
+    }
+
+    // Connect the new node to the last node in the list
+    tail->next = newNode;
+    newNode->back = tail;
+
+    return head;
+}
+
+int main(){
+     Node* head = nullptr; 
+     head = insertAtTail(head, 10);
+      head = insertAtTail(head, 20);
+       head = insertAtTail(head, 30);
+        head = insertAtTail(head,41);
+     
+    print(head);
+
+    return 0;
+}
