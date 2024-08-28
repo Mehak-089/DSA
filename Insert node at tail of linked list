@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+
+// Define the Node structure
+class Node {
+public:
+    int data;
+    Node* next;
+
+    // Constructor to create a new node
+    Node(int data,  Node* next = nullptr) {
+        this->data = data;
+        this->next = next;
+    }
+};
+
+// Function to traverse and print the linked list
+void printLinkedList(Node* head) {
+    Node* current = head;
+    while (current != nullptr) {
+        cout << current->data << " ";  // Print the data of the current node
+        current = current->next;       // Move to the next node
+    }
+    cout << endl;
+}
+
+Node* inserttail(Node* head,int k ){
+     if (head == nullptr) {
+        return new Node(k);
+    }
+    Node* tail = head;
+    while (tail->next != nullptr) {  // Traverse until the last node
+        tail = tail->next;
+    }
+    Node* newNode = new Node(k);  // Create a new node with nullptr as next
+    tail->next = newNode;  // Link the last node to the new node
+    return head;
+}
+int main() {
+    // Manually creating the linked list: 1 -> 2 -> 3 -> 4 -> 5
+    Node* head = new Node(1);
+    head->next = new Node(2);
+    head->next->next = new Node(3);
+    head->next->next->next = new Node(4);
+    head->next->next->next->next = new Node(5);
+    
+    // Traverse and print the linked list
+   
+    
+    head=inserttail(head,20);
+    
+  printLinkedList(head);
+    return 0;
+} 
+
+ /tmp/vkiC1o9A7v.o
+100 1 2 3 4 5 20 
+
+
+=== Code Execution Successful ===
