@@ -1,0 +1,29 @@
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+int main() {
+    // Create a stack of integers
+    stack<int> myStack;
+
+    // Insert elements into the stack
+    // myStack.push(10);
+    // myStack.push(20);
+    myStack.push(30);
+    myStack.push(40);
+
+    // Remove elements from the stack
+    myStack.pop(); // Removes 40
+   
+
+    // Print the remaining elements in the stack (LIFO order)
+    cout << "Remaining elements in the stack: ";
+    while (!myStack.empty()) {
+        cout << myStack.top() << " ";
+        myStack.pop();
+    }
+    cout << endl;
+
+    return 0;
+}
